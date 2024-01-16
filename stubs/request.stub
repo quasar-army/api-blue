@@ -1,0 +1,22 @@
+<?php
+
+namespace {{ namespace }};
+
+use Orion\Http\Requests\Request;
+
+class {{ class }} extends Request
+{
+    public function storeRules(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public function updateRules(): array
+    {
+        return [
+            //
+        ];
+    }
+}
