@@ -7,26 +7,15 @@ use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\SanctumController;
 use Illuminate\Support\Facades\Route;
 
-Broadcast::routes(['middleware' => ['auth:sanctum']]);
-
 /**
- * Authentication
+ * Auth
  */
 
 Route::post('/sanctum/token', [SanctumController::class, 'login'])->name('sanctum.tokenLogin');
-
-/**
- * Password Reset
- */
-
 Route::get('/password-reset-page', [PasswordResetController::class, 'redirectToPasswordResetPage'])->name('password.reset');
+Route::get('/user', [SanctumController::class, 'user'])->middleware(['auth:sanctum', 'user_is_active']);
 
 Route::middleware(['auth:sanctum', 'user_is_active'])->group(function () {
-    /**
-     * Auth
-     */
-
-    Route::get('/user', [SanctumController::class, 'user']);
 
     /**
      * JSON Rest Api
@@ -43,3 +32,18 @@ Route::middleware(['auth:sanctum', 'user_is_active'])->group(function () {
     Route::post('services/roles/attach-role', [RolesController::class, 'attachRole']);
     Route::post('services/roles/detach-role', [RolesController::class, 'detachRole']);
 });
+
+/**
+ * Broadcasting
+ */
+
+Broadcast::routes(['middleware' => ['auth:sanctum']]);
+
+/**
+ * Webhooks
+ *
+ * NOTE: These routes also need to be
+ * added to $except within VerifyCsrfToken
+ */
+
+Route::webhooks('webhook');
