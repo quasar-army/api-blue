@@ -69,6 +69,7 @@ class PermissionsSeeder extends Seeder
          * Additional permissions
          */
         Permission::findOrCreate('access horizon');
+        Permission::findOrCreate('access telescope');
         // Permission::findOrCreate('manage passwords');
         // Permission::findOrCreate("create personal_access_tokens");
 
@@ -76,5 +77,6 @@ class PermissionsSeeder extends Seeder
          * Assign additional permissions
          */
         $adminRole->givePermissionTo('access horizon');
+        $adminRole->givePermissionTo('access telescope');
     }
 }

@@ -57,7 +57,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
     protected function gate(): void
     {
         Gate::define('viewTelescope', function ($user) {
-            return $user->hasPermissionTo('access horizon');
+            return $user->hasPermissionTo('access telescope');
         });
     }
 }
