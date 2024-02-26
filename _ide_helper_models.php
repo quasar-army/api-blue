@@ -204,23 +204,6 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * App\Models\Transaction
- *
- * @property-read \App\Models\User|null $creator
- * @property-read \App\Models\Org $org
- * @property-read \App\Models\Tenant $tenant
- * @method static \Illuminate\Database\Eloquent\Builder|Transaction newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Transaction newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Transaction onlyTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder|Transaction query()
- * @method static \Illuminate\Database\Eloquent\Builder|Transaction withTrashed()
- * @method static \Illuminate\Database\Eloquent\Builder|Transaction withoutTrashed()
- */
-	class Transaction extends \Eloquent {}
-}
-
-namespace App\Models{
-/**
  * App\Models\User
  *
  * @property string $id

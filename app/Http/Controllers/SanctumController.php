@@ -11,10 +11,13 @@ class SanctumController extends Controller
 {
     public function login(Request $request)
     {
+        ray($request);
         $validatedCredentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
+
+        ray($validatedCredentials);
 
         $user = User::withoutGlobalScopes()->where('email', $validatedCredentials['email'])->first();
 

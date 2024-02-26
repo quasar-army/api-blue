@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "clickbar/laravel-magellan": "^1.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/fortify": "^1.19",
         "laravel/framework": "^10.10",
@@ -21,7 +22,8 @@
         "spatie/laravel-permission": "^6.3",
         "spatie/laravel-ray": "^1.33",
         "spatie/laravel-webhook-client": "^3.2",
-        "tailflow/laravel-orion": "^2.0"
+        "tailflow/laravel-orion": "^2.0",
+        "tpetry/laravel-postgresql-enhanced": "^0.34.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
